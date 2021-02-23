@@ -1,0 +1,10 @@
+<%= flash[:notice] %>
+<%= form_with url: session_create_url, method: :post, local:true do |f| %>
+    <%= f.label :user_label, "Имя пользователя:"%>
+    <%= f.text_field :username, required: true %>
+    <%= f.label :password_label, "Пароль:"%>
+    <%= f.password_field :password, required: true %><br><br>
+    <%= f.submit :login, required: true %>
+<% end %>
+<br>
+<%= link_to 'Регистрация', new_user_path%>

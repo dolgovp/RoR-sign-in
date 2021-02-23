@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
+</p>
+
+<%= link_to 'Редактировать пользователя', edit_user_path(@user) %>
+<br>
+<%= link_to 'Посмотреть всех пользователей', users_path %>
+<br>
+<%= link_to 'Перейти к вычислениям', index_input_path %>
+
+

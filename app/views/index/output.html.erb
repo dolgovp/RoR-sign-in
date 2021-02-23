@@ -1,0 +1,23 @@
+<%if @error %>
+    <p><%=@error%><p>
+<%else%>
+    <h1>Пары дружественных чисел в диапазоне от 1 до <%=@n%></h1>
+    <table class="table">
+            <tr>
+                <td><strong>Число 1</strong></td>
+                <td><strong>Число 2</strong></td>
+            </tr>
+            <% @friendly_array.each_with_index do |r,i|%>
+                <% if i <=@friendly_array.length/2-1 %>
+                <tr>
+                    <td><%=@friendly_array[i*2]%></td>
+                    <td><%=@friendly_array[i*2+1]%></td>
+                </tr>
+                <%end%>
+            <%end%>
+    </table>
+<%end%>
+<br>
+<%= link_to 'Выйти', session_logout_path %>
+<br>
+<%= link_to 'Назад к вводу', index_input_path %>
